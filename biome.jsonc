@@ -1,0 +1,59 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true
+	},
+	"formatter": {
+		"formatWithErrors": true
+	},
+	"linter": {
+		"rules": {
+			"all": true,
+			"complexity": {
+				// incompatible with `noPropertyAccessFromIndexSignature` option in tsconfig
+				// ref: https://github.com/biomejs/biome/issues/463
+				"useLiteralKeys": "off"
+			},
+			"nursery": {
+				"all": true,
+				// this rule is for non-React projects
+				"noReactSpecificProps": "off"
+			}
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	},
+	"overrides": [
+		{
+			// disable the rule for non-project files
+			"include": ["**"],
+			"ignore": ["app/**", "public/**"],
+			"linter": {
+				"rules": {
+					"nursery": {
+						"noNodejsModules": "off"
+					}
+				}
+			}
+		},
+		{
+			// disable the rule for config files and jsx files
+			"include": ["*.config.*", "*.jsx", "*.mjsx", "*.tsx", "*.mtsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
+}

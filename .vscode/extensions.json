@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"oven.bun-vscode",
+		"biomejs.biome",
+		// cspell:ignore tamasfe
+		"tamasfe.even-better-toml", // for bunfig.toml
+		"github.vscode-github-actions",
+		// cspell:ignore esbenp
+		"esbenp.prettier-vscode", // for css, yaml, and markdown
+		"streetsidesoftware.code-spell-checker"
+	]
+}

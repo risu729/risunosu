@@ -1,5 +1,7 @@
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { theme } from "../theme";
@@ -31,6 +33,8 @@ const Layout = ({
 						<Header />
 						<Container component="main">{children}</Container>
 						<Footer />
+						<Analytics />
+						<SpeedInsights />
 					</Container>
 				</ThemeProvider>
 			</AppRouterCacheProvider>

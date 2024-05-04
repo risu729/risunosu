@@ -24,7 +24,7 @@
 		"@emotion/react": "11.11.4",
 		"@emotion/styled": "11.11.5",
 		"@mui/icons-material": "5.15.16",
-		"@mui/material": "5.15.15",
+		"@mui/material": "5.15.16",
 		"@mui/material-nextjs": "5.15.11",
 		"@vercel/analytics": "1.2.2",
 		"@vercel/speed-insights": "1.0.10",

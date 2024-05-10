@@ -7,5 +7,5 @@
 	"compilerOptions": {
 		"incremental": true
 	},
-	"exclude": ["node_modules", "app", "public", "next-env.d.ts"]
+	"exclude": ["node_modules", "app", "public"]
 }

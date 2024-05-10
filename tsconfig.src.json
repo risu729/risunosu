@@ -4,5 +4,5 @@
 		"@tsconfig/next/tsconfig.json",
 		"@tsconfig/strictest/tsconfig.json"
 	],
-	"include": ["app", "public", ".next/types/**/*.ts", "next-env.d.ts"]
+	"include": ["app", "public", ".next/types/**/*.ts"]
 }

@@ -109,8 +109,14 @@ jobs:
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
         run: bun run biome ci --error-on-warnings .
 
-      - name: tsc (source)
+      - name: build
+        id: build
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
+        # generate type definitions (e.g. next-env.d.ts)
+        run: bun run next build
+
+      - name: tsc (source)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: bun run tsc --project tsconfig.src.json --incremental false
 
       - name: tsc (other)

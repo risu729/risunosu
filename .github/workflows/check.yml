@@ -109,7 +109,7 @@ jobs:
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
         run: bun run biome ci --error-on-warnings .
 
-      - name: build
+      - name: Build
         id: build
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
         # generate type definitions (e.g. next-env.d.ts)

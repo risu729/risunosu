@@ -63,7 +63,7 @@ jobs:
           github.event_name == 'pull_request'
         uses: tj-actions/changed-files@a29e8b565651ce417abb5db7164b4a2ad8b6155c # v44.4.0
         with:
-          files: ${{ steps.get-tsconfig-files.outputs.files }}
+          files: ${{ fromJson(steps.get-tsconfig-files.outputs.files) }}
 
       - name: Restore Build Cache
         id: restore-build-cache

@@ -14,6 +14,7 @@ import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
+import risuIcon from "../../public/risu.png";
 
 const navigationItems = ["home", "about", "works", "social"];
 
@@ -72,7 +73,7 @@ const Header = () => {
 						aria-label="Home"
 					>
 						<Stack direction="row" alignItems="center" spacing={1}>
-							<Image src="/risu.png" alt="" width={40} height={40} />
+							<Image src={risuIcon} alt="" width={40} height={40} />
 							<Typography fontSize="1.5rem" fontWeight="bold">
 								Risunosu
 							</Typography>

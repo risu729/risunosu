@@ -6,9 +6,12 @@ import {
 	Stack,
 	Typography,
 } from "@mui/material";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import NextLink from "next/link";
 import type { ReactNode } from "react";
+import astroLogo from "../../public/astro.svg";
+import erutcurtsLogo from "../../public/erutcurts.png";
+import larva06Logo from "../../public/larva06.svg";
 
 const Content = ({
 	name,
@@ -17,7 +20,7 @@ const Content = ({
 	children,
 }: {
 	name: string;
-	iconSrc: string;
+	iconSrc: StaticImageData;
 	href: string;
 	children: ReactNode;
 }) => {
@@ -55,8 +58,6 @@ const Content = ({
 						<Image
 							src={iconSrc}
 							alt={`${name}のアイコン`}
-							width={150}
-							height={150}
 							style={{
 								width: "100%",
 								height: "100%",
@@ -94,12 +95,12 @@ const Content = ({
 const Page = () => {
 	return (
 		<Stack padding={4} spacing={4}>
-			<Content name="Larva06" iconSrc="/larva06.svg" href="https://larva06.com">
+			<Content name="Larva06" iconSrc={larva06Logo} href="https://larva06.com">
 				<Typography>中高生による中高生研究者採掘メディア</Typography>
 			</Content>
 			<Content
 				name="Erutcurts"
-				iconSrc="/erutcurts.png"
+				iconSrc={erutcurtsLogo}
 				href="https://discord.com/api/oauth2/authorize?client_id=989728847899541504&permissions=274878024704&scope=bot%20applications.commands"
 			>
 				<Typography>
@@ -111,7 +112,7 @@ const Page = () => {
 			<Content
 				// cspell:ignore astro
 				name="astro-better-image-service"
-				iconSrc="/astro.svg"
+				iconSrc={astroLogo}
 				href="https://github.com/risu729/astro-better-image-service#readme"
 			>
 				<Typography>

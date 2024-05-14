@@ -142,7 +142,7 @@ jobs:
         # cache is not saved if tasks except for build fail in check-push or check-pr, but there is no way to check it
         if: >-
           ${{
-            !cancelled() && steps.restore-build-cache.outputs.cache-hit == 'false' &&
+            !cancelled() && steps.restore-build-cache.outcome == 'success' && steps.restore-build-cache.outputs.cache-hit != 'true' &&
             (steps.check-push.outcome == 'success' || steps.check-pr.outcome == 'success' || steps.build.outcome == 'success')
           }}
         uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2

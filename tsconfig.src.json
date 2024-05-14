@@ -4,11 +4,5 @@
 		"@tsconfig/next/tsconfig.json",
 		"@tsconfig/strictest/tsconfig.json"
 	],
-	"include": [
-		"src",
-		"public",
-		".next/types/**/*.ts",
-		"next-env.d.ts",
-		"__test__"
-	]
+	"include": ["src", "public", ".next/types/**/*.ts", "next-env.d.ts"]
 }

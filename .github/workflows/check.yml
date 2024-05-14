@@ -51,28 +51,30 @@ jobs:
 
       - name: Get Included Files of tsconfig.src.json
         id: get-tsconfig-files
-        run: |
-          files=$(bun run tsc --project tsconfig.src.json --showConfig | jq --compact-output .files)
-          echo "files=$files" >> "$GITHUB_OUTPUT"
-
-      - name: Check Changed Files
-        id: changed-files
         # check if lint-staged should be run
         if: >-
           (github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000') ||
           github.event_name == 'pull_request'
+        run: |
+          files=$(bun run tsc --project tsconfig.src.json --showConfig | jq --raw-output ".files | join(\",\")")
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+      - name: Check Changed Files
+        id: changed-files
+        # outputs will be empty strings if the step is skipped
+        if: steps.get-tsconfig-files.outputs.files != ''
         uses: tj-actions/changed-files@a29e8b565651ce417abb5db7164b4a2ad8b6155c # v44.4.0
         with:
-          files: ${{ fromJson(steps.get-tsconfig-files.outputs.files) }}
+          files: ${{ steps.get-tsconfig-files.outputs.files }}
+          files_separator: ","
 
       - name: Restore Build Cache
         id: restore-build-cache
-        # outputs will be empty strings if the step is skipped
         if: steps.changed-files.outputs.any_changed != 'false'
         uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: .next/cache
-          key: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles(fromJson(steps.get-tsconfig-files.outputs.files)) }}
+          key: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('src', 'public', 'next.config.js', 'tsconfig.src.json') }}
           # restore the prior cache if lockfile is not changed
           restore-keys: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-
 
@@ -143,7 +145,6 @@ jobs:
         run: bun run next build
 
       - name: Save Build Cache
-        # outputs will be empty strings if the step is skipped
         # cache is not saved if tasks except for build fail in check-push or check-pr, but there is no way to check it
         if: >-
           ${{

@@ -55,7 +55,7 @@ jobs:
           (github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000') ||
           github.event_name == 'pull_request'
         run: |
-          files=$(bun run tsc --project tsconfig.src.json --showConfig | jq --raw-output ".files | join(\",\")")
+          files=$(bun run tsc --project tsconfig.src.json --showConfig | jq --raw-output "([\"tsconfig.src.json\"] + .files) | join(\",\")")
           echo "files=$files" >> "$GITHUB_OUTPUT"
 
       - name: Check Changed Files

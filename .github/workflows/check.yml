@@ -49,6 +49,35 @@ jobs:
         env:
           HUSKY: 0
 
+      - name: Get Included Files of tsconfig.src.json
+        id: get-tsconfig-files
+        # check if lint-staged should be run
+        if: >-
+          (github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000') ||
+          github.event_name == 'pull_request'
+        run: |
+          files=$(bun run tsc --project tsconfig.src.json --showConfig | jq --raw-output ".files | join(\",\")")
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+      - name: Check Changed Files
+        id: changed-files
+        # outputs will be empty strings if the step is skipped
+        if: steps.get-tsconfig-files.outputs.files != ''
+        uses: tj-actions/changed-files@a29e8b565651ce417abb5db7164b4a2ad8b6155c # v44.4.0
+        with:
+          files: ${{ steps.get-tsconfig-files.outputs.files }}
+          files_separator: ","
+
+      - name: Restore Build Cache
+        id: restore-build-cache
+        if: steps.changed-files.outputs.any_changed != 'false'
+        uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          path: .next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('src', 'public', 'next.config.js', 'tsconfig.src.json') }}
+          # restore the prior cache if lockfile is not changed
+          restore-keys: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-
+
       - name: "commitlint (push: initial commit)"
         id: commitlint-push-initial
         # commit hash will be 000... if it doesn't exist
@@ -109,8 +138,26 @@ jobs:
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
         run: bun run biome ci --error-on-warnings .
 
-      - name: tsc (source)
+      - name: Build
+        id: build
         if: ${{ !cancelled() && steps.ignore-sync.outcome == 'success' && steps.ignore-sync.outcome == 'failure' }}
+        # generate type definitions (e.g. next-env.d.ts)
+        run: bun run next build
+
+      - name: Save Build Cache
+        # cache is not saved if tasks except for build fail in check-push or check-pr, but there is no way to check it
+        if: >-
+          ${{
+            !cancelled() && steps.restore-build-cache.outputs.cache-hit == 'false' &&
+            (steps.check-push.outcome == 'success' || steps.check-pr.outcome == 'success' || steps.build.outcome == 'success')
+          }}
+        uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          path: .next/cache
+          key: ${{ steps.restore-build-cache.outputs.cache-primary-key }}
+
+      - name: tsc (source)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: bun run tsc --project tsconfig.src.json --incremental false
 
       - name: tsc (other)

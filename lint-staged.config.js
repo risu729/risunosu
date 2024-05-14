@@ -60,7 +60,11 @@ const ciOnlyConfig = {
 
 	[getTscFilesPattern("tsconfig.base.json")]: () => "bun run check:tsc:base",
 
-	[getTscFilesPattern("tsconfig.src.json")]: () => "bun run check:tsc:src",
+	[getTscFilesPattern("tsconfig.src.json")]: () => [
+		// generate type definitions (e.g. next-env.d.ts)
+		"bun run build",
+		"bun run check:tsc:src",
+	],
 };
 
 /**

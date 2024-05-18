@@ -9,9 +9,9 @@ import {
 import Image, { type StaticImageData } from "next/image";
 import NextLink from "next/link";
 import type { ReactNode } from "react";
-import astroLogo from "../../public/astro.svg";
-import erutcurtsLogo from "../../public/erutcurts.png";
-import larva06Logo from "../../public/larva06.svg";
+import astroLogo from "../../public/logo/astro.svg";
+import erutcurtsLogo from "../../public/logo/erutcurts.png";
+import larva06Logo from "../../public/logo/larva06.svg";
 
 const Content = ({
 	name,

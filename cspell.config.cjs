@@ -14,9 +14,12 @@ module.exports = {
 		"bun.lockb",
 		// ignore license files
 		"LICENSE",
+		// ignore image files
+		"*.svg",
 	],
 	words: [
 		"risu",
+		"taku",
 		"risunosu",
 		"erutcurts",
 		"nextjs",

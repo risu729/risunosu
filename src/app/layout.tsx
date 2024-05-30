@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 		template: "%s | Risunosu",
 		default: "Risunosu",
 	},
+	description: "りすのWebサイト",
 };
 
 const Layout = ({

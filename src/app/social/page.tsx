@@ -1,8 +1,13 @@
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import type { Metadata } from "next";
 import { accounts } from "./accounts";
 import { ClientAccounts } from "./clientAccounts";
 import { SocialCard } from "./socialCard";
+
+export const metadata: Metadata = {
+	title: "Social",
+};
 
 const Page = () => {
 	const shownAccounts = accounts.filter(({ hidden }) => !hidden);

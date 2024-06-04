@@ -22,7 +22,9 @@
 			"nursery": {
 				"all": true,
 				// this rule is for non-React projects
-				"noReactSpecificProps": "off"
+				"noReactSpecificProps": "off",
+				// incompatible with `allowImportingTsExtensions` option in tsconfig
+				"useImportExtensions": "off"
 			}
 		}
 	},
@@ -38,7 +40,7 @@
 			"ignore": ["app/**", "public/**"],
 			"linter": {
 				"rules": {
-					"nursery": {
+					"correctness": {
 						"noNodejsModules": "off"
 					}
 				}

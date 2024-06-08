@@ -105,8 +105,19 @@ const Page = () => {
 			>
 				<Typography>
 					{/* cspell:ignore mcstructure mcpack */}
-					Minecraft Bedrock Editionからエクスポートされた .mcstructureファイル
-					を .mcpack ファイルなどに変換するDiscord Bot
+					Minecraft Bedrock Edition
+					<wbr />
+					からエクスポートされた
+					<wbr />
+					.mcstructure
+					<wbr />
+					ファイルを
+					<wbr />
+					.mcpack
+					<wbr />
+					ファイルなどに変換する
+					<wbr />
+					Discord Bot
 				</Typography>
 			</Content>
 			<Content

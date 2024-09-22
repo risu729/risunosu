@@ -19,12 +19,20 @@
 				// ref: https://github.com/biomejs/biome/issues/463
 				"useLiteralKeys": "off"
 			},
-			"nursery": {
-				"all": true,
+			"suspicious": {
 				// this rule is for non-React projects
-				"noReactSpecificProps": "off",
+				"noReactSpecificProps": "off"
+			},
+			"correctness": {
 				// incompatible with `allowImportingTsExtensions` option in tsconfig
 				"useImportExtensions": "off"
+			},
+			"nursery": {
+				"all": true,
+				// too many false positives
+				"noSecrets": "off",
+				// prefer using process.env over config files
+				"noProcessEnv": "off"
 			}
 		}
 	},
@@ -53,6 +61,22 @@
 				"rules": {
 					"style": {
 						"noDefaultExport": "off"
+					}
+				}
+			}
+		},
+		{
+			// allow exporting metadata with components in Next.js files
+			"include": ["src/app/**"],
+			"linter": {
+				"rules": {
+					"nursery": {
+						"useComponentExportOnlyModules": {
+							"level": "error",
+							"options": {
+								"allowExportNames": ["metadata"]
+							}
+						}
 					}
 				}
 			}

@@ -39,7 +39,7 @@ const config = {
 		? "biome ci --error-on-warnings"
 		: "biome check --apply-unsafe --error-on-warnings",
 
-	"prettier.config.cjs": () =>
+	"prettier.config.js": () =>
 		process.env["CI"] ? "prettier --check ." : "bun run check:prettier",
 
 	"*.{md,yml,yaml,css}": process.env["CI"]

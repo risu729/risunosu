@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { memo } from 'react'
 
 const Footer = () => {
 	return (
@@ -16,4 +17,4 @@ const Footer = () => {
 	);
 };
 
-export default Footer;
+export default memo(Footer);

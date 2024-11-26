@@ -39,14 +39,14 @@ jobs:
 
       - name: Install actionlint
         # cspell:ignore jaxxstorm
-        uses: jaxxstorm/action-install-gh-release@7f2440a9a41f74262d8f6433da138c799799a969 # v1.13.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore rhysd
           repo: rhysd/actionlint
           cache: enable
 
       - name: Install pinact
-        uses: jaxxstorm/action-install-gh-release@7f2440a9a41f74262d8f6433da138c799799a969 # v1.13.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore pinact
           repo: suzuki-shunsuke/pinact
@@ -54,7 +54,7 @@ jobs:
 
       - name: Install ghalint
         id: install-ghalint
-        uses: jaxxstorm/action-install-gh-release@7f2440a9a41f74262d8f6433da138c799799a969 # v1.13.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore shunsuke ghalint
           repo: suzuki-shunsuke/ghalint

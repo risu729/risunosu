@@ -54,7 +54,7 @@
 		"ignore-sync": "7.0.1",
 		"knip": "5.39.1",
 		"lint-staged": "15.2.10",
-		"prettier": "3.4.1",
+		"prettier": "3.4.2",
 		"typescript": "5.7.2"
 	},
 	"trustedDependencies": ["@biomejs/biome", "@vercel/speed-insights", "sharp"],

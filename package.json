@@ -28,7 +28,7 @@
 		"@mui/material-nextjs": "6.1.9",
 		"@vercel/analytics": "1.4.1",
 		"@vercel/speed-insights": "1.1.0",
-		"next": "15.0.4",
+		"next": "15.1.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"sharp": "0.33.5"

@@ -13,7 +13,7 @@ import {
 import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
 import NextLink from "next/link";
-import { useState } from "react";
+import { memo, useState } from "react";
 import risuIcon from "../../public/risu.png";
 
 const navigationItems = ["home", "about", "works", "social"];
@@ -129,4 +129,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default memo(Header);

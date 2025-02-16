@@ -37,5 +37,5 @@
 
 	"typescript.disableAutomaticTypeAcquisition": true,
 
-	"editor.defaultColorDecorators": true
+	"editor.defaultColorDecorators": "auto"
 }

@@ -32,7 +32,7 @@ const CertificationWithDetails = ({
 		<ListItem sx={{ display: "list-item" }}>
 			{text}
 			<IconButton
-				onClick={(): JSX.Element => {
+				onClick={(): void => {
 					setDetails(!details);
 				}}
 				sx={{

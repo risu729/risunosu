@@ -21,7 +21,7 @@ const navigationItems = ["home", "about", "works", "social"];
 const Menu = ({
 	showsHome = false,
 	...props
-}: Omit<LinkProps, "href"> & { showsHome?: boolean }): JSX.Element => {
+}: Omit<LinkProps, "href"> & { showsHome?: boolean }): JSX.Element[] => {
 	return navigationItems
 		.filter((item) => showsHome || item !== "home")
 		.map((item) => {

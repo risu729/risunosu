@@ -17,7 +17,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { Fragment, type ReactNode, useState } from "react";
+import { Fragment, type JSX, type ReactNode, useState } from "react";
 
 const CertificationWithDetails = ({
 	text,
@@ -25,14 +25,14 @@ const CertificationWithDetails = ({
 }: {
 	text: string;
 	children: ReactNode;
-}) => {
+}): JSX.Element => {
 	const [details, setDetails] = useState(false);
 
 	return (
 		<ListItem sx={{ display: "list-item" }}>
 			{text}
 			<IconButton
-				onClick={() => {
+				onClick={(): JSX.Element => {
 					setDetails(!details);
 				}}
 				sx={{
@@ -55,7 +55,7 @@ const CertificationWithDetails = ({
 	);
 };
 
-const Ib = () => {
+const Ib = (): JSX.Element => {
 	const scores = [
 		{
 			name: "English B HL",
@@ -172,7 +172,7 @@ const Ib = () => {
 };
 
 // cspell:ignore ielts
-const Ielts = () => {
+const Ielts = (): JSX.Element => {
 	const scores = [
 		{
 			name: "Listening",
@@ -232,7 +232,7 @@ const Ielts = () => {
 	);
 };
 
-const Toefl = () => {
+const Toefl = (): JSX.Element => {
 	const scores = [
 		{
 			name: "Reading",
@@ -292,7 +292,7 @@ const Toefl = () => {
 	);
 };
 
-export const Certifications = () => {
+export const Certifications = (): JSX.Element => {
 	return (
 		<Stack>
 			<Typography variant="h5" component="h2">

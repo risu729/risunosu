@@ -22,6 +22,7 @@ export const theme = createTheme({
 		MuiTypography: {
 			styleOverrides: {
 				// enable auto-phrase word break for all Typography components
+				// biome-ignore lint/nursery/useExplicitType: type inference is preferred
 				root: ({ theme }) =>
 					theme.unstable_sx({
 						wordBreak: "auto-phrase",

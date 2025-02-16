@@ -1,6 +1,7 @@
 import { Box, Divider, Stack, Typography } from "@mui/material";
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { JSX } from "react";
 import risuIcon from "../../../public/risu.png";
 import { Certifications } from "./certifications";
 import { History } from "./history";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 	title: "About",
 };
 
-const Page = () => {
+const Page = (): JSX.Element => {
 	return (
 		<Stack padding={4} spacing={4}>
 			<Stack direction="row" spacing={1} alignItems="center">

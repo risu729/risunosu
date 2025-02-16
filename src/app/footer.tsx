@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import type { JSX } from "react";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
 	return (
 		<Box
 			component="footer"

@@ -1,5 +1,6 @@
 import { Box, Grid2 } from "@mui/material";
 import type { Metadata } from "next";
+import type { JSX } from "react";
 import { accounts } from "./accounts";
 import { ClientAccounts } from "./clientAccounts";
 import { SocialCard } from "./socialCard";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 	title: "Social",
 };
 
-const Page = () => {
+const Page = (): JSX.Element => {
 	const shownAccounts = accounts.filter(({ hidden }) => !hidden);
 
 	return (

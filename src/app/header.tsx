@@ -13,7 +13,7 @@ import {
 import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
 import NextLink from "next/link";
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import risuIcon from "../../public/risu.png";
 
 const navigationItems = ["home", "about", "works", "social"];
@@ -21,7 +21,7 @@ const navigationItems = ["home", "about", "works", "social"];
 const Menu = ({
 	showsHome = false,
 	...props
-}: Omit<LinkProps, "href"> & { showsHome?: boolean }) => {
+}: Omit<LinkProps, "href"> & { showsHome?: boolean }): JSX.Element => {
 	return navigationItems
 		.filter((item) => showsHome || item !== "home")
 		.map((item) => {
@@ -41,7 +41,7 @@ const Menu = ({
 		});
 };
 
-const Header = () => {
+const Header = (): JSX.Element => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -81,7 +81,7 @@ const Header = () => {
 					</Link>
 					<IconButton
 						aria-label="メニューを開く"
-						onClick={() => {
+						onClick={(): void => {
 							setOpen(true);
 						}}
 						sx={{
@@ -106,7 +106,7 @@ const Header = () => {
 			<Drawer
 				component="nav"
 				open={open}
-				onClose={() => {
+				onClose={(): void => {
 					setOpen(false);
 				}}
 				anchor="right"
@@ -119,7 +119,7 @@ const Header = () => {
 				<Stack alignItems="center" padding={10} spacing={6}>
 					<Menu
 						showsHome={true}
-						onClick={() => {
+						onClick={(): void => {
 							setOpen(false);
 						}}
 					/>

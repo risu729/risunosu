@@ -8,8 +8,9 @@ import {
 	timelineItemClasses,
 } from "@mui/lab";
 import { Stack, Typography } from "@mui/material";
+import type { JSX } from "react";
 
-export const History = () => {
+export const History = (): JSX.Element => {
 	const events = [
 		{
 			title: "一般社団法人lirfa設立",

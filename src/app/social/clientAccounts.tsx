@@ -1,11 +1,11 @@
 "use client";
 
 import { Button, Collapse, Divider, Grid2 } from "@mui/material";
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import { accounts } from "./accounts";
 import { SocialCard } from "./socialCard";
 
-export const ClientAccounts = () => {
+export const ClientAccounts = (): JSX.Element => {
 	const [showAll, setShowAll] = useState(false);
 
 	const hiddenAccounts = accounts.filter(({ hidden }) => hidden);
@@ -21,7 +21,7 @@ export const ClientAccounts = () => {
 				{showAll ? (
 					<Divider flexItem={true} sx={{ width: "98%" }} />
 				) : (
-					<Button onClick={() => setShowAll(true)}>more...</Button>
+					<Button onClick={(): void => setShowAll(true)}>more...</Button>
 				)}
 			</Grid2>
 			<Collapse

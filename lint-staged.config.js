@@ -68,6 +68,6 @@ const ciOnlyConfig = {
 };
 
 /**
- * @type {import("lint-staged").Config}
+ * @type {import("lint-staged").Configuration}
  */
 export default { ...config, ...(process.env["CI"] ? ciOnlyConfig : {}) };

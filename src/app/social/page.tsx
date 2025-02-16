@@ -1,5 +1,4 @@
-import { Box } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Box, Grid2 } from "@mui/material";
 import type { Metadata } from "next";
 import { accounts } from "./accounts";
 import { ClientAccounts } from "./clientAccounts";
@@ -14,16 +13,19 @@ const Page = () => {
 
 	return (
 		<Box padding={4}>
-			<Grid container={true} spacing={2} alignItems="stretch">
+			<Grid2 container={true} spacing={2} alignItems="stretch">
 				{shownAccounts.map((props) => {
 					return (
-						<Grid key={`${props.service}${props.name}`} xs={12} sm={6}>
+						<Grid2
+							key={`${props.service}${props.name}`}
+							size={{ xs: 12, sm: 6 }}
+						>
 							<SocialCard {...props} />
-						</Grid>
+						</Grid2>
 					);
 				})}
 				<ClientAccounts />
-			</Grid>
+			</Grid2>
 		</Box>
 	);
 };

@@ -19,6 +19,7 @@ defaults:
 jobs:
   lint:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
 
     permissions:
       contents: read # for checkout
@@ -27,10 +28,10 @@ jobs:
     steps:
       - name: actions-timeline
         # cspell:ignore kesin
-        uses: Kesin11/actions-timeline@518da3e0348d81936d2582859c88984728434d78 # v2.1.2
+        uses: Kesin11/actions-timeline@427ee2cf860166e404d0d69b4f2b24012bb7af4f # v2.2.3
 
       - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           sparse-checkout: |
             .github/workflows/*
@@ -38,14 +39,14 @@ jobs:
 
       - name: Install actionlint
         # cspell:ignore jaxxstorm
-        uses: jaxxstorm/action-install-gh-release@25d5e2dd555cd74f1fab9ac1e6ea117acde2c0c4 # v1.12.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore rhysd
           repo: rhysd/actionlint
           cache: enable
 
       - name: Install pinact
-        uses: jaxxstorm/action-install-gh-release@25d5e2dd555cd74f1fab9ac1e6ea117acde2c0c4 # v1.12.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore pinact
           repo: suzuki-shunsuke/pinact
@@ -53,7 +54,7 @@ jobs:
 
       - name: Install ghalint
         id: install-ghalint
-        uses: jaxxstorm/action-install-gh-release@25d5e2dd555cd74f1fab9ac1e6ea117acde2c0c4 # v1.12.0
+        uses: jaxxstorm/action-install-gh-release@cd6b2b78ad38bdd294341cda064ec0692b06215b # v1.14.0
         with:
           # cspell:ignore shunsuke ghalint
           repo: suzuki-shunsuke/ghalint

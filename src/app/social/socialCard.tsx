@@ -4,10 +4,10 @@ import {
 	CardActionArea,
 	CardContent,
 	CardMedia,
+	Grid2,
 	Stack,
 	Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
 import Image from "next/image";
 import NextLink from "next/link";
 import type { Account } from "./accounts";
@@ -69,7 +69,7 @@ const SocialInfo = ({
 					},
 				}}
 			>
-				<Grid
+				<Grid2
 					container={true}
 					spacing={1}
 					alignItems={{
@@ -77,19 +77,19 @@ const SocialInfo = ({
 						sm: "center",
 					}}
 				>
-					<Grid xs={12} md="auto">
+					<Grid2 size={{ xs: 12, md: "auto" }}>
 						<Typography component="h2" variant="h6">
 							{service}
 						</Typography>
-					</Grid>
-					<Grid>
+					</Grid2>
+					<Grid2>
 						<Stack direction="row" alignItems="center" spacing={1}>
 							<Typography>{name}</Typography>
 							{privateAccount && <LockOutlined fontSize="small" />}
 						</Stack>
-					</Grid>
-					{description && <Grid xs={12}>{description}</Grid>}
-				</Grid>
+					</Grid2>
+					{description && <Grid2 size={12}>{description}</Grid2>}
+				</Grid2>
 			</CardContent>
 		</Stack>
 	);

@@ -1,7 +1,6 @@
 "use client";
 
-import { Button, Collapse, Divider } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Button, Collapse, Divider, Grid2 } from "@mui/material";
 import { useState } from "react";
 import { accounts } from "./accounts";
 import { SocialCard } from "./socialCard";
@@ -13,29 +12,37 @@ export const ClientAccounts = () => {
 
 	return (
 		<>
-			<Grid xs={12} display="flex" justifyContent="center" alignItems="center">
+			<Grid2
+				size={12}
+				display="flex"
+				justifyContent="center"
+				alignItems="center"
+			>
 				{showAll ? (
 					<Divider flexItem={true} sx={{ width: "98%" }} />
 				) : (
 					<Button onClick={() => setShowAll(true)}>more...</Button>
 				)}
-			</Grid>
+			</Grid2>
 			<Collapse
 				in={showAll}
 				timeout="auto"
 				unmountOnExit={true}
-				component={Grid}
+				component={Grid2}
 			>
-				<Grid container={true} spacing={2} alignItems="stretch">
+				<Grid2 container={true} spacing={2} alignItems="stretch">
 					{showAll &&
 						hiddenAccounts.map((props) => {
 							return (
-								<Grid key={`${props.service}${props.name}`} xs={12} sm={6}>
+								<Grid2
+									key={`${props.service}${props.name}`}
+									size={{ xs: 12, sm: 6 }}
+								>
 									<SocialCard {...props} />
-								</Grid>
+								</Grid2>
 							);
 						})}
-				</Grid>
+				</Grid2>
 			</Collapse>
 		</>
 	);

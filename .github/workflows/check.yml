@@ -16,6 +16,7 @@ defaults:
 jobs:
   check:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
 
     permissions:
       contents: read # for checkout
@@ -26,20 +27,20 @@ jobs:
         # skip if the workflow is called from another workflow
         if: contains(github.workflow_ref, '/check.yml')
         # cspell:ignore kesin
-        uses: Kesin11/actions-timeline@518da3e0348d81936d2582859c88984728434d78 # v2.1.2
+        uses: Kesin11/actions-timeline@427ee2cf860166e404d0d69b4f2b24012bb7af4f # v2.2.3
 
       - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0 # fetch all history for commitlint
 
       - name: Setup bun
-        uses: oven-sh/setup-bun@f4d14e03ff726c06358e5557344e1da148b56cf7 # v1.2.2
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
 
       - name: Setup Node.js
         # Install to use the latest version of Node.js when shebang is specified
         # ref: https://bun.sh/docs/cli/run#bun
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version-file: package.json
 
@@ -62,7 +63,7 @@ jobs:
         id: changed-files
         # outputs will be empty strings if the step is skipped
         if: steps.get-tsconfig-files.outputs.files != ''
-        uses: tj-actions/changed-files@cc733854b1f224978ef800d29e4709d5ee2883e4 # v44.5.5
+        uses: tj-actions/changed-files@dcc7a0cba800f454d79fff4b993e8c3555bcc0a8 # v45.0.7
         with:
           files: ${{ steps.get-tsconfig-files.outputs.files }}
           files_separator: ","
@@ -70,7 +71,7 @@ jobs:
       - name: Restore Build Cache
         id: restore-build-cache
         if: steps.changed-files.outputs.any_changed != 'false'
-        uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: .next/cache
           key: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('src', 'public', 'next.config.js', 'tsconfig.src.json') }}
@@ -145,7 +146,7 @@ jobs:
             !cancelled() && steps.restore-build-cache.outcome == 'success' && steps.restore-build-cache.outputs.cache-hit != 'true' &&
             (steps.check-push.outcome == 'success' || steps.check-pr.outcome == 'success' || steps.build.outcome == 'success')
           }}
-        uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache/save@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: .next/cache
           key: ${{ steps.restore-build-cache.outputs.cache-primary-key }}

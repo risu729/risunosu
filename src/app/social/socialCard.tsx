@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import NextLink from "next/link";
+import type { JSX } from "react";
 import type { Account } from "./accounts";
 
 const SocialInfo = ({
@@ -18,7 +19,7 @@ const SocialInfo = ({
 	logo: Logo,
 	privateAccount,
 	description,
-}: Account) => {
+}: Account): JSX.Element => {
 	return (
 		<Stack
 			direction="row"
@@ -95,7 +96,7 @@ const SocialInfo = ({
 	);
 };
 
-export const SocialCard = (props: Account) => {
+export const SocialCard = (props: Account): JSX.Element => {
 	return (
 		<Card
 			sx={{

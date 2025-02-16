@@ -22,7 +22,9 @@ module.exports = {
 	words: [
 		"risu",
 		"taku",
+		"kodama",
 		"risunosu",
+		"lirfa",
 		"erutcurts",
 		"nextjs",
 		"bunfig",

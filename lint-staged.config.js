@@ -25,7 +25,7 @@ const getTscFilesPattern = (tsconfigFilename) => {
 };
 
 /**
- * @type {import("lint-staged").Config}
+ * @type {import("lint-staged").Configuration}
  */
 const config = {
 	".gitignore?(-sync)": () => "bun run ignore-sync",
@@ -52,7 +52,7 @@ const config = {
 };
 
 /**
- * @type {import("lint-staged").Config}
+ * @type {import("lint-staged").Configuration}
  */
 const ciOnlyConfig = {
 	"(*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx,mdx,json}|.github/workflows/*|.husky/*)":
@@ -68,6 +68,6 @@ const ciOnlyConfig = {
 };
 
 /**
- * @type {import("lint-staged").Config}
+ * @type {import("lint-staged").Configuration}
  */
 export default { ...config, ...(process.env["CI"] ? ciOnlyConfig : {}) };

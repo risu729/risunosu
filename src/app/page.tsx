@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import Image, { type StaticImageData } from "next/image";
 import NextLink from "next/link";
-import type { ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 import astroLogo from "../../public/logo/astro.svg";
 import erutcurtsLogo from "../../public/logo/erutcurts.png";
 import larva06Logo from "../../public/logo/larva06.svg";
@@ -23,7 +23,7 @@ const Content = ({
 	iconSrc: StaticImageData;
 	href: string;
 	children: ReactNode;
-}) => {
+}): JSX.Element => {
 	return (
 		<Card
 			sx={{
@@ -92,7 +92,7 @@ const Content = ({
 	);
 };
 
-const Page = () => {
+const Page = (): JSX.Element => {
 	return (
 		<Stack padding={4} spacing={4}>
 			<Content name="Larva06" iconSrc={larva06Logo} href="https://larva06.com">

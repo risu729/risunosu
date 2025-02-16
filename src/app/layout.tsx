@@ -3,7 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 import { theme } from "../theme";
 import Footer from "./footer";
 import Header from "./header";
@@ -20,7 +20,7 @@ const Layout = ({
 	children,
 }: Readonly<{
 	children: ReactNode;
-}>) => {
+}>): JSX.Element => {
 	return (
 		<html lang="ja">
 			<AppRouterCacheProvider>

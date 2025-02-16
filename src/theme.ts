@@ -2,18 +2,16 @@
 
 import { deepPurple } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
-// cspell:ignore roboto
-import { Roboto } from "next/font/google";
+// cspell:ignore noto
+import { Noto_Sans_JP } from "next/font/google";
 
-const roboto = Roboto({
-	weight: ["300", "400", "500", "700"],
-	subsets: ["latin"],
-	display: "swap",
+const noto = Noto_Sans_JP({
+	preload: false,
 });
 
 export const theme = createTheme({
 	typography: {
-		fontFamily: roboto.style.fontFamily,
+		fontFamily: noto.style.fontFamily,
 	},
 	palette: {
 		primary: deepPurple,
@@ -24,6 +22,7 @@ export const theme = createTheme({
 		MuiTypography: {
 			styleOverrides: {
 				// enable auto-phrase word break for all Typography components
+				// biome-ignore lint/nursery/useExplicitType: type inference is preferred
 				root: ({ theme }) =>
 					theme.unstable_sx({
 						wordBreak: "auto-phrase",

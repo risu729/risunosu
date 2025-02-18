@@ -15,7 +15,6 @@ import noteLogo from "../../../public/logo/note.svg";
 import npmLogo from "../../../public/logo/npm.png";
 // cspell:ignore qiita
 import qiitaLogo from "../../../public/logo/qiita.png";
-import threadsLogo from "../../../public/logo/threads.svg";
 import xLogo from "../../../public/logo/x.svg";
 import youtubeLogo from "../../../public/logo/youtube.png";
 // cspell:ignore zenn
@@ -121,13 +120,6 @@ export const accounts: Account[] = [
 		href: "https://www.instagram.com/risu_real",
 		privateAccount: true,
 		description: "日常など。主に旅行",
-	},
-	{
-		name: "risu_real",
-		service: "Threads",
-		logo: threadsLogo,
-		href: "https://www.threads.net/@risu_real",
-		hidden: true,
 	},
 	{
 		name: "risu729",

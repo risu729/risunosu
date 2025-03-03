@@ -73,6 +73,6 @@ jobs:
 
       - name: Run pinact
         if: ${{ !cancelled() && steps.install-ghalint.outcome == 'success' }}
-        uses: suzuki-shunsuke/pinact-action@a60b07ee63e41654915780a3297ff9f5f6b6db63 # v0.1.0
+        uses: suzuki-shunsuke/pinact-action@56efd2c1e82a807c939fe31dfbeb12fb73258566 # v0.1.1
         with:
           skip_push: true # cannot push to the repository in the workflow unless using a PAT

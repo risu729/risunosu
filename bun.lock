@@ -37,7 +37,7 @@
         "cspell": "8.17.5",
         "husky": "9.1.7",
         "ignore-sync": "8.0.0",
-        "knip": "5.44.0",
+        "knip": "5.45.0",
         "lint-staged": "15.5.0",
         "prettier": "3.5.3",
         "typescript": "5.8.2",
@@ -788,7 +788,7 @@
 
     "keyv": ["keyv@4.5.4", "", { "dependencies": { "json-buffer": "3.0.1" } }, "sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw=="],
 
-    "knip": ["knip@5.44.0", "", { "dependencies": { "@nodelib/fs.walk": "3.0.1", "@snyk/github-codeowners": "1.1.0", "easy-table": "1.2.0", "enhanced-resolve": "^5.18.0", "fast-glob": "^3.3.3", "jiti": "^2.4.2", "js-yaml": "^4.1.0", "minimist": "^1.2.8", "picocolors": "^1.1.0", "picomatch": "^4.0.1", "pretty-ms": "^9.0.0", "smol-toml": "^1.3.1", "strip-json-comments": "5.0.1", "summary": "2.1.0", "zod": "^3.22.4", "zod-validation-error": "^3.0.3" }, "peerDependencies": { "@types/node": ">=18", "typescript": ">=5.0.4" }, "bin": { "knip": "bin/knip.js", "knip-bun": "bin/knip-bun.js" } }, "sha512-j39v3LYCmU6P6HN/TG14bc0Dlthl12g6NogdEZHQdhlVS6BqfnGGS3ospYYwLill6Sdc68eptwGtThunqq7lxA=="],
+    "knip": ["knip@5.45.0", "", { "dependencies": { "@nodelib/fs.walk": "3.0.1", "@snyk/github-codeowners": "1.1.0", "easy-table": "1.2.0", "enhanced-resolve": "^5.18.0", "fast-glob": "^3.3.3", "jiti": "^2.4.2", "js-yaml": "^4.1.0", "minimist": "^1.2.8", "picocolors": "^1.1.0", "picomatch": "^4.0.1", "pretty-ms": "^9.0.0", "smol-toml": "^1.3.1", "strip-json-comments": "5.0.1", "summary": "2.1.0", "zod": "^3.22.4", "zod-validation-error": "^3.0.3" }, "peerDependencies": { "@types/node": ">=18", "typescript": ">=5.0.4" }, "bin": { "knip": "bin/knip.js", "knip-bun": "bin/knip-bun.js" } }, "sha512-OUyO9FUEVCM6/j0gl+PP/LDeJEs4hIdE8n4vK4xrtjN1g3Qu4Ws1oexbWTCJ+8xt8Tgse4Yvhx96OqF/UVl3Ug=="],
 
     "lilconfig": ["lilconfig@3.1.3", "", {}, "sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw=="],
 

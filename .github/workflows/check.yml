@@ -71,7 +71,7 @@ jobs:
       - name: Restore Build Cache
         id: restore-build-cache
         if: steps.changed-files.outputs.any_changed != 'false'
-        uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
           path: .next/cache
           key: nextjs-${{ runner.os }}-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('src', 'public', 'next.config.js', 'tsconfig.src.json') }}
@@ -146,7 +146,7 @@ jobs:
             !cancelled() && steps.restore-build-cache.outcome == 'success' && steps.restore-build-cache.outputs.cache-hit != 'true' &&
             (steps.check-push.outcome == 'success' || steps.check-pr.outcome == 'success' || steps.build.outcome == 'success')
           }}
-        uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
           path: .next/cache
           key: ${{ steps.restore-build-cache.outputs.cache-primary-key }}

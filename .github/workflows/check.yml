@@ -63,7 +63,7 @@ jobs:
         id: changed-files
         # outputs will be empty strings if the step is skipped
         if: steps.get-tsconfig-files.outputs.files != ''
-        uses: tj-actions/changed-files@a284dc1814e3fd07f2e34267fc8f81227ed29fb8 # v45.0.9
+        uses: tj-actions/changed-files@26a38635fc1173cc5820336ce97be6188d0de9f5 # v46.0.2
         with:
           files: ${{ steps.get-tsconfig-files.outputs.files }}
           files_separator: ","

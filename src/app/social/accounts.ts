@@ -43,11 +43,6 @@ const xAccounts: ({
 		description: "マイクラ垢。本垢(?)",
 	},
 	{
-		id: "risu_rom",
-		hidden: true,
-		description: "かわいいを摂取するところ",
-	},
-	{
 		id: "risu_real",
 		privateAccount: true,
 		description: "リア垢",
@@ -159,7 +154,7 @@ export const accounts: Account[] = [
 		name: "risu729",
 		service: "LinkedIn",
 		logo: linkedinLogo,
-		href: "https://www.linkedin.com/in/risu729/",
+		href: "https://www.linkedin.com/in/taku-kodama/",
 	},
 	{
 		name: "risu729",

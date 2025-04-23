@@ -60,6 +60,6 @@
 	},
 	"trustedDependencies": ["@biomejs/biome", "@vercel/speed-insights", "sharp"],
 	"volta": {
-		"node": "22.14.0"
+		"node": "22.15.0"
 	}
 }

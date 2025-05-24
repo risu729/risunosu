@@ -53,7 +53,7 @@
 		"cspell": "9.0.2",
 		"husky": "9.1.7",
 		"ignore-sync": "8.0.0",
-		"knip": "5.57.2",
+		"knip": "5.58.0",
 		"lint-staged": "16.0.0",
 		"prettier": "3.5.3",
 		"typescript": "5.8.3"

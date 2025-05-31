@@ -25,7 +25,7 @@
         "@commitlint/cz-commitlint": "19.8.1",
         "@commitlint/types": "19.8.1",
         "@cspell/cspell-types": "9.0.2",
-        "@tsconfig/bun": "1.0.7",
+        "@tsconfig/bun": "1.0.8",
         "@tsconfig/next": "2.0.3",
         "@tsconfig/strictest": "2.0.5",
         "@types/bun": "1.2.9",
@@ -430,7 +430,7 @@
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
 
-    "@tsconfig/bun": ["@tsconfig/bun@1.0.7", "", {}, "sha512-udGrGJBNQdXGVulehc1aWT73wkR9wdaGBtB6yL70RJsqwW/yJhIg6ZbRlPOfIUiFNrnBuYLBi9CSmMKfDC7dvA=="],
+    "@tsconfig/bun": ["@tsconfig/bun@1.0.8", "", {}, "sha512-JlJaRaS4hBTypxtFe8WhnwV8blf0R+3yehLk8XuyxUYNx6VXsKCjACSCvOYEFUiqlhlBWxtYCn/zRlOb8BzBQg=="],
 
     "@tsconfig/next": ["@tsconfig/next@2.0.3", "", {}, "sha512-b4aKvmdWnv9aUy+NStUFlefirk3SItW20OJtbi5/ue9oMRaQtUYbN5zsr7OmV3rlx6Gp6h7A82gPoCXhrNGVPQ=="],
 
